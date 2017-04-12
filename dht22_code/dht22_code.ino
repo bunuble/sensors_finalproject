@@ -16,7 +16,7 @@ DHT dht_3(SENSOR_3,DHTTYPE);
 
 void setup(){
   Serial.begin(9600);
-  Serial.print("Getting data from Sensors");
+  Serial.print("Getting data from Sensors\n");
   dht_1.begin();
   //dht_2.begin();
   //dht_3.begin();
