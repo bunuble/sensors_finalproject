@@ -10,24 +10,24 @@ sensor_3 = 27
 
 delay = 2
 
-while True;
+while True:
     humidity_1,temp_1 = dht.read_retry(sensor_model,sensor_1)
     humidity_2,temp_2 = dht.read_retry(sensor_model,sensor_2)
     humidity_3,temp_3 = dht.read_retry(sensor_model,sensor_3)
     
     if humidity_1 is not None and temp_1 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_1, humidity_1))
+    else:
         print("can't read from Sensor 1")
         
     if humidity_2 is not None and temp_2 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_2, humidity_2))
+    else:
         print("can't read from Sensor 2")
         
     if humidity_3 is not None and temp_3 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_3, humidity_3))
+    else:
         print("can't read from Sensor 3")
     
     #time in seconds
