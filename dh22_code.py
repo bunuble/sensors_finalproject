@@ -1,5 +1,6 @@
 import Adafruit_DHT as dht
 from time import sleep
+import os
 
 sensor_model = dht.DHT22
 
@@ -9,8 +10,9 @@ sensor_2 = 15
 sensor_3 = 27
 
 delay = 2
+isRoot = os.getuid() == 0
 
-while True;
+while isRoot:
     humidity_1,temp_1 = dht.read_retry(sensor_model,sensor_1)
     humidity_2,temp_2 = dht.read_retry(sensor_model,sensor_2)
     humidity_3,temp_3 = dht.read_retry(sensor_model,sensor_3)
@@ -35,4 +37,7 @@ while True;
     
     #time in seconds
     sleep(delay)
+    
+if isRoot is False:
+    print("run script as root")
     
