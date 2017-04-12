@@ -2,11 +2,12 @@
 #include "DHT.h"
 #define DHTTYPE DHT22 
 
-//which pins the sensors are attached to
+//which digital pin the sensors are attached to
 #define SENSOR_1 2
 #define SENSOR_2 3
 #define SENSOR_3 4
 
+//delay in milliseconds
 #define DELAY 2000
 
 DHT dht_1(SENSOR_1,DHTTYPE);
