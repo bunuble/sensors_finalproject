@@ -19,16 +19,19 @@ while True;
         print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
     else
         print("can't read from Sensor 1")
+        continue
         
     if humidity_2 is not None and temp_2 is not None:
         print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
     else
         print("can't read from Sensor 2")
+        continue
         
     if humidity_3 is not None and temp_3 is not None:
         print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temperature, humidity))
     else
         print("can't read from Sensor 3")
+        continue
     
     #time in seconds
     sleep(delay)
