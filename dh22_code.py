@@ -1,6 +1,10 @@
 import Adafruit_DHT as dht
 import os
 
+#crontab.guru
+#crontab under root aka "sudo crontab -e"
+#min  hour  day  month  weekday   command
+#*    *       *      *           *               [command]  //this command is to run every minute
 sensor_model = dht.DHT22
 
 #GPIO Pin that the sensor is attached to
