@@ -1,5 +1,4 @@
 import Adafruit_DHT as dht
-from time import sleep
 import os
 
 sensor_model = dht.DHT22
@@ -12,32 +11,29 @@ sensor_3 = 27
 delay = 2
 isRoot = os.getuid() == 0
 
-while isRoot:
-    humidity_1,temp_1 = dht.read_retry(sensor_model,sensor_1)
-    humidity_2,temp_2 = dht.read_retry(sensor_model,sensor_2)
-    humidity_3,temp_3 = dht.read_retry(sensor_model,sensor_3)
+if isRoot:
+    humidity_1,temp_1 = dht.read(sensor_model,sensor_1)
+    humidity_2,temp_2 = dht.read(sensor_model,sensor_2)
+    humidity_3,temp_3 = dht.read(sensor_model,sensor_3)
     
     if humidity_1 is not None and temp_1 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_1, humidity_1))
-    else:
+        print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+    else
         print("can't read from Sensor 1")
-        continue
+        humidity_1,temp_1 = 99999
         
     if humidity_2 is not None and temp_2 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_2, humidity_2))
-    else:
+        print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+    else
         print("can't read from Sensor 2")
-        continue
+        humidity_2,temp_2 = 99999
         
     if humidity_3 is not None and temp_3 is not None:
-        print('Temp={0:0.1f}*  Humidity={1:0.1f}%'.format(temp_3, humidity_3))
-    else:
+        print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+    else
         print("can't read from Sensor 3")
-        continue
+        humidity_3,temp_3 = 99999
     
-    #time in seconds
-    sleep(delay)
-    
-if isRoot is False:
+else:
     print("run script as root")
     
