@@ -22,19 +22,19 @@ if isRoot:
     
     if humidity_1 is not None and temp_1 is not None:
         print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+    else:
         print("can't read from Sensor 1")
         humidity_1,temp_1 = 99999
         
     if humidity_2 is not None and temp_2 is not None:
         print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+    else:
         print("can't read from Sensor 2")
         humidity_2,temp_2 = 99999
         
     if humidity_3 is not None and temp_3 is not None:
         print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
-    else
+    else:
         print("can't read from Sensor 3")
         humidity_3,temp_3 = 99999
     
