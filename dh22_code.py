@@ -45,11 +45,11 @@ if isRoot:
     else:
         print("can't read from Sensor 3")
         humidity_3,temp_3 = 99999
-	
-	 logToCSV(temp_1,humidity_1,1)
-	 logToCSV(temp_2,humidity_2,2)
-	 logToCSV(temp_3,humidity_3,3)
-	 
+
+    logToCSV(temp_1,humidity_1,1)
+    logToCSV(temp_2,humidity_2,2)
+    logToCSV(temp_3,humidity_3,3)
+
 
 else:
     print("run script as root")
