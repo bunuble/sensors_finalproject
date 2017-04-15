@@ -1,7 +1,7 @@
 import Adafruit_DHT as dht
 import os
 import csv
-import time
+import datetime
 
 #crontab.guru
 #crontab under root aka "sudo crontab -e"
@@ -13,15 +13,15 @@ sensor_model = dht.DHT22
 #GPIO Pin that the sensor is attached to
 sensor_pins = [3,15,27]
 
-num_sensors = 1
+num_sensors = 2
 
 #temp_1,humidity_1,temp_2,humidity_2,temp_3,humidity_3
 
 isRoot = os.getuid() == 0
 
 def logToCSV(temp, humidity, tag):
-	row = [time.time(), tag, temp, humidity]
-	with open('/home/sensors/sensors_finalproject/sensor_log.csv', 'a') as file:
+	row = [datetime.datetime.now().strftime('%m/%d/%Y %H:%M:%S'), temp, humidity]
+	with open('/home/sensors/sensors_finalproject/sensor' + str(tag) + '_log.csv', 'a') as file:
 		writer = csv.writer(file)
 		writer.writerow(row)
 
