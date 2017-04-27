@@ -8,6 +8,8 @@ temp_inside = []
 temp_outside = []
 humidity_inside = []
 humidity_outside = []
+temp_diff = []
+humidity_diff = []
 
 with open('fixed_data.csv','r') as file:
     data = csv.reader(file)
@@ -18,6 +20,8 @@ with open('fixed_data.csv','r') as file:
         humidity_inside.append(row[2])
         temp_outside.append(row[3])
         humidity_outside.append(row[4])
+        temp_diff.append(float(row[1])-float(row[3]))
+        humidity_diff.append(float(row[2])-float(row[4]))
 
 graph_1 = pylab.subplot(1,2,1)
 graph_1.plot(date,temp_inside,label="Inside")
@@ -35,4 +39,7 @@ pylab.xlabel('Date')
 pylab.ylabel('Humidity (Percent)')
 graph_2.legend()
 
+pylab.show()
+
+pylab.plot(date,temp_diff)
 pylab.show()
