@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import pylab
 import numpy as np
 import csv
