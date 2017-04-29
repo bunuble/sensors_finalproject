@@ -11,7 +11,7 @@ humidity_outside = []
 temp_diff = []
 humidity_diff = []
 
-with open('fixed_data_test.csv','r') as file:
+with open('../CSV/fixed_data.csv','r') as file:
     data = csv.reader(file)
 
     for row in data:
