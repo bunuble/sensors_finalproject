@@ -28,6 +28,7 @@ with open('../CSV/sensor0_log.csv','r') as sensor0, open('../CSV/sensor1_log.csv
                         writer = csv.writer(file)
                         writer.writerow(fixed_row)
                     count = count + 1
+                    data1.remove(row1)
                     break
 
 print('Amount of matching dates:' + str(count))
